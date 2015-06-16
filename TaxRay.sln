@@ -1,0 +1,164 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay.Web", "TaxRay.Web\TaxRay.Web.csproj", "{45EFA5F6-26A0-4BD4-8339-BA8875E623FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay.Model", "TaxRay.Model\TaxRay.Model.csproj", "{21D3DAAA-9852-4484-9835-67324CC44F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay.Data", "TaxRay.Data\TaxRay.Data.csproj", "{09A873E6-20CF-498A-B57C-0C79227F1575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay.Contracts", "TaxRay.Contracts\TaxRay.Contracts.csproj", "{807A0720-C034-4BF3-8DEC-96A96A637F4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AFFD1E95-7BFC-4139-8A76-BCA48592FE6D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TaxRay.Database", "TaxRay.Database\TaxRay.Database.sqlproj", "{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B2DE8072-F835-44F5-B3E8-1733A3DCF54E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay.Web.Tests.Unit", "TaxRay.Web.Tests.Unit\TaxRay.Web.Tests.Unit.csproj", "{820FC7B6-2A4F-4275-B5A2-4A2FBA3D8B71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay.Tests.Helpers", "TaxRay.Tests.Helpers\TaxRay.Tests.Helpers.csproj", "{36E9FA0D-95F9-4BAA-AB56-A76250502B52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D979761-86E8-4C7C-A460-343B9B073B89}"
+	ProjectSection(SolutionItems) = preProject
+		AssemblyVersionInfo.cs = AssemblyVersionInfo.cs
+		coverage.runsettings = coverage.runsettings
+		CustomDictionary.xml = CustomDictionary.xml
+		Local.testsettings = Local.testsettings
+		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay.WebAndLoadTests", "TaxRay.WebAndLoadTests\TaxRay.WebAndLoadTests.csproj", "{00E4F260-E893-47A4-8C84-40F178894025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay.Data.Tests.Unit", "TaxRay.Data.Tests.Unit\TaxRay.Data.Tests.Unit.csproj", "{7A6A5063-0989-4D85-9EAE-9D6CDEDA3461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRay", "TaxRay\TaxRay.csproj", "{97437547-D73C-4523-BE3B-24FCD91960B7}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://useomapp2946.us.kworld.kpmg.com:8080/tfs/ttpdefaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TaxRay.Web\\TaxRay.Web.csproj
+		SccProjectName1 = TaxRay.Web
+		SccLocalPath1 = TaxRay.Web
+		SccProjectUniqueName2 = TaxRay.Model\\TaxRay.Model.csproj
+		SccProjectName2 = TaxRay.Model
+		SccLocalPath2 = TaxRay.Model
+		SccProjectUniqueName3 = TaxRay.Data\\TaxRay.Data.csproj
+		SccProjectName3 = TaxRay.Data
+		SccLocalPath3 = TaxRay.Data
+		SccProjectUniqueName4 = TaxRay.Contracts\\TaxRay.Contracts.csproj
+		SccProjectName4 = TaxRay.Contracts
+		SccLocalPath4 = TaxRay.Contracts
+		SccProjectUniqueName5 = TaxRay.Database\\TaxRay.Database.sqlproj
+		SccProjectName5 = TaxRay.Database
+		SccLocalPath5 = TaxRay.Database
+		SccProjectUniqueName6 = TaxRay.Web.Tests.Unit\\TaxRay.Web.Tests.Unit.csproj
+		SccProjectTopLevelParentUniqueName6 = TaxRay.sln
+		SccProjectName6 = TaxRay.Web.Tests.Unit
+		SccLocalPath6 = TaxRay.Web.Tests.Unit
+		SccProjectUniqueName7 = TaxRay.Tests.Helpers\\TaxRay.Tests.Helpers.csproj
+		SccProjectTopLevelParentUniqueName7 = TaxRay.sln
+		SccProjectName7 = TaxRay.Tests.Helpers
+		SccLocalPath7 = TaxRay.Tests.Helpers
+		SccProjectUniqueName8 = TaxRay.WebAndLoadTests\\TaxRay.WebAndLoadTests.csproj
+		SccProjectTopLevelParentUniqueName8 = TaxRay.sln
+		SccProjectName8 = TaxRay.WebAndLoadTests
+		SccLocalPath8 = TaxRay.WebAndLoadTests
+		SccProjectUniqueName9 = TaxRay.Data.Tests.Unit\\TaxRay.Data.Tests.Unit.csproj
+		SccProjectTopLevelParentUniqueName9 = TaxRay.sln
+		SccProjectName9 = TaxRay.Data.Tests.Unit
+		SccLocalPath9 = TaxRay.Data.Tests.Unit
+		SccProjectUniqueName10 = TaxRay\\TaxRay.csproj
+		SccProjectName10 = TaxRay
+		SccLocalPath10 = TaxRay
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		QA|Any CPU = QA|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45EFA5F6-26A0-4BD4-8339-BA8875E623FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45EFA5F6-26A0-4BD4-8339-BA8875E623FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45EFA5F6-26A0-4BD4-8339-BA8875E623FE}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{45EFA5F6-26A0-4BD4-8339-BA8875E623FE}.QA|Any CPU.Build.0 = QA|Any CPU
+		{45EFA5F6-26A0-4BD4-8339-BA8875E623FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45EFA5F6-26A0-4BD4-8339-BA8875E623FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D3DAAA-9852-4484-9835-67324CC44F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D3DAAA-9852-4484-9835-67324CC44F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D3DAAA-9852-4484-9835-67324CC44F9A}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{21D3DAAA-9852-4484-9835-67324CC44F9A}.QA|Any CPU.Build.0 = QA|Any CPU
+		{21D3DAAA-9852-4484-9835-67324CC44F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D3DAAA-9852-4484-9835-67324CC44F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A873E6-20CF-498A-B57C-0C79227F1575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A873E6-20CF-498A-B57C-0C79227F1575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A873E6-20CF-498A-B57C-0C79227F1575}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{09A873E6-20CF-498A-B57C-0C79227F1575}.QA|Any CPU.Build.0 = QA|Any CPU
+		{09A873E6-20CF-498A-B57C-0C79227F1575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A873E6-20CF-498A-B57C-0C79227F1575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807A0720-C034-4BF3-8DEC-96A96A637F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807A0720-C034-4BF3-8DEC-96A96A637F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807A0720-C034-4BF3-8DEC-96A96A637F4D}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{807A0720-C034-4BF3-8DEC-96A96A637F4D}.QA|Any CPU.Build.0 = QA|Any CPU
+		{807A0720-C034-4BF3-8DEC-96A96A637F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807A0720-C034-4BF3-8DEC-96A96A637F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.QA|Any CPU.Build.0 = QA|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.QA|Any CPU.Deploy.0 = QA|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6D275A-C8CD-496B-AC5A-2D822F9C9D68}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{820FC7B6-2A4F-4275-B5A2-4A2FBA3D8B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{820FC7B6-2A4F-4275-B5A2-4A2FBA3D8B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{820FC7B6-2A4F-4275-B5A2-4A2FBA3D8B71}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{820FC7B6-2A4F-4275-B5A2-4A2FBA3D8B71}.QA|Any CPU.Build.0 = QA|Any CPU
+		{820FC7B6-2A4F-4275-B5A2-4A2FBA3D8B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{820FC7B6-2A4F-4275-B5A2-4A2FBA3D8B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36E9FA0D-95F9-4BAA-AB56-A76250502B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E9FA0D-95F9-4BAA-AB56-A76250502B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E9FA0D-95F9-4BAA-AB56-A76250502B52}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{36E9FA0D-95F9-4BAA-AB56-A76250502B52}.QA|Any CPU.Build.0 = QA|Any CPU
+		{36E9FA0D-95F9-4BAA-AB56-A76250502B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E9FA0D-95F9-4BAA-AB56-A76250502B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E4F260-E893-47A4-8C84-40F178894025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E4F260-E893-47A4-8C84-40F178894025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E4F260-E893-47A4-8C84-40F178894025}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{00E4F260-E893-47A4-8C84-40F178894025}.QA|Any CPU.Build.0 = QA|Any CPU
+		{00E4F260-E893-47A4-8C84-40F178894025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E4F260-E893-47A4-8C84-40F178894025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6A5063-0989-4D85-9EAE-9D6CDEDA3461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6A5063-0989-4D85-9EAE-9D6CDEDA3461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6A5063-0989-4D85-9EAE-9D6CDEDA3461}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{7A6A5063-0989-4D85-9EAE-9D6CDEDA3461}.QA|Any CPU.Build.0 = QA|Any CPU
+		{7A6A5063-0989-4D85-9EAE-9D6CDEDA3461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6A5063-0989-4D85-9EAE-9D6CDEDA3461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97437547-D73C-4523-BE3B-24FCD91960B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97437547-D73C-4523-BE3B-24FCD91960B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97437547-D73C-4523-BE3B-24FCD91960B7}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{97437547-D73C-4523-BE3B-24FCD91960B7}.QA|Any CPU.Build.0 = Release|Any CPU
+		{97437547-D73C-4523-BE3B-24FCD91960B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97437547-D73C-4523-BE3B-24FCD91960B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{820FC7B6-2A4F-4275-B5A2-4A2FBA3D8B71} = {B2DE8072-F835-44F5-B3E8-1733A3DCF54E}
+		{36E9FA0D-95F9-4BAA-AB56-A76250502B52} = {B2DE8072-F835-44F5-B3E8-1733A3DCF54E}
+		{00E4F260-E893-47A4-8C84-40F178894025} = {B2DE8072-F835-44F5-B3E8-1733A3DCF54E}
+		{7A6A5063-0989-4D85-9EAE-9D6CDEDA3461} = {B2DE8072-F835-44F5-B3E8-1733A3DCF54E}
+	EndGlobalSection
+EndGlobal

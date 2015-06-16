@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <link href="Styles/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="Styles/KMPG_Styles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Kendo_KMPG.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/lib/jquery-1.10.2.min.js"></script>
+
+</head>
+<body>
+
+    <div>
+        <div class="header">
+            <div class="branding">
+                <div class="applicationBar">
+                    <div class="contentApplicationBar">
+                        <div class="titlePortal">
+                            <label>KPMG LINK Global Mobility Portal</label>
+                        </div>
+                        <div class="dateUser">
+                            <div class="date">
+                                <label>Last Login: 11.05.2015 07:12:05</label>
+                            </div>
+                            <div class="user">
+                                <a href="">
+                                    <img src="Images/KPMG/app-settings.png" />
+                                </a>
+                                <label>scorredera@kpmg.com</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="capabilityBar">
+                    <div class="menu">
+                        <div class="optionSelected">
+                            <div class="home">
+                                <div class="iconHome">
+                                </div>
+                                <div class="titleHome">
+                                    Home
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="taxes">
+                                <div class="iconTaxes">
+                                </div>
+                                <div class="titleTaxes">
+                                    Taxes
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="travelTracker">
+                                <div class="iconTravelTracker">
+                                </div>
+                                <div class="titleTravelTracker">
+                                    Travel Tracker
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="inmigration">
+                                <div class="iconInmigration">
+                                </div>
+                                <div class="titleInmigration">
+                                    Inmigration
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="documents">
+                                <div class="iconDocuments">
+                                </div>
+                                <div class="titleDocuments">
+                                    Documents
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet">
+                        <div class="iconPortlet"></div>
+                        <div class="titlePortlet">Portlet Library</div>
+                    </div>
+
+                </div>
+                <div class="logo">
+                    <img src="Images/KPMG/logo.png" />
+                </div>
+            </div>
+            <div class="pinBar">
+                <div class="contentPinBar">
+                </div>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div class="widget">
+                <div class="headerWidget">
+                    <div>
+                        <label>User Name:</label>
+                        <input type="text" id="txtUsuario" /><br /><br />
+                        <label>Password:</label>
+                        <input type="password" id="txtPassWord" /><br /><br />
+                        <label>Confirm Password:</label>
+                        <input type="password" id="txtConfirmPassword" /><br /><br />
+                        <input type="button" id="btn-Crear" value="Register" />
+                        <input type="button" id="btn-logarse" value="Logarse" />
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2015 KPMG AG Wirtschaftsprüfungsgesellschaft, a member firm of the KPMG network of independent member firms
+            affiliated with KPMG International Cooperative (“KPMG International”), a Swiss entity. All rights reserved.
+            The name KPMG, the logo and “cutting through complexity” are registered trademarks of KPMG International.
+            <a href="" class="footer-link-button">Legal</a> | <a href="" class="footer-link-button">Privacy</a> | <a href="" class="footer-link-button">Company Information</a>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn-logarse").click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '/token',
+                    data: { 'grant_type': 'password', 'username': 'alberto', 'password': 'Prueba2015' },
+                    dataType: 'json',
+                    success: function (data) {
+                        window.sessionStorage.setItem("tokenKey", data.access_token);
+                        var token = window.sessionStorage.getItem("tokenKey");
+                        var headers = {};
+                        if (token) {
+                            headers.Authorization = 'Bearer ' + token;
+                        }
+
+                        $.ajax({
+                            type: 'GET',
+                            url: '/api/TaxReturn/assigned',
+                            headers: headers,
+                            success: function (data) {
+                                alert("ok");
+                            },
+                            error: function (data) {
+                                alert("Error");
+                            }
+                        });
+
+                    },
+                    error: function (data) {
+                        alert("Error");
+                    }
+                });
+            })
+            /*grant_type=password&username=inma&password=SuperPass*/
+
+            $("#btn-Crear").click(function () {
+                var _data = {
+                    "UserName": $("#txtUsuario").val(),
+                    "Password": $("#txtPassWord").val(),
+                    "ConfirmPassword": $("#txtConfirmPassword").val()
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/Account/Register',
+                    data: _data,
+                    dataType: 'json',
+                    success: function (result) {
+                        alert(result);
+                    },
+                    error: function (result) {
+                        alert("Error");
+                    }
+                });
+            })
+        })
+    </script>
+
+</body>
+</html>

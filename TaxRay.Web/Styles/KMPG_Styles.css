@@ -1,0 +1,790 @@
+﻿@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('Fonts/open_sans/OpenSans-Regular.ttf') format('truetype'), url('Fonts/open_sans/OpenSans-Regular-webfont.eot') format('embedded-opentype');
+}
+
+html {
+    color: #000000;
+    font-weight: normal;
+    font-size: 11px;
+    font-family: OpenSans-Regular;
+}
+
+input::-ms-clear {
+    display:none;
+}
+
+/*Header*/
+.header {
+    height: 102px;
+}
+
+    /*Logo*/
+    .header .logo {
+        width: 199px;
+        position: absolute;
+        top: 9px;
+    }
+
+    /* Zone with application name, user name, date and menu */
+    .header .branding {
+        height: 70px;
+        width: 100%;
+        border: solid 1px #015397;
+    }
+
+        /* Zone with application name, date and user name */
+        .header .branding .applicationBar {
+            background: #064880;
+            height: 30px;
+            width: 100%;
+        }
+
+            /* Aplication name */
+            .header .branding .applicationBar .contentApplicationBar {
+                margin-left: 200px;
+                height: 28px;
+                color: white;
+            }
+
+                .header .branding .applicationBar .contentApplicationBar .titlePortal {
+                    float: left;
+                    vertical-align: middle;
+                    margin-top: 5px;
+                }
+
+                    .header .branding .applicationBar .contentApplicationBar .titlePortal label {
+                        font-size: 15px;
+                        font-weight: bold;
+                        vertical-align: middle;
+                    }
+
+            /* Zone with date and user name */
+            .header .branding .applicationBar .dateUser {
+                float: right;
+                margin-top: 5px;
+                margin-right: 10px;
+            }
+                /* Date */
+                .header .branding .applicationBar .dateUser .date {
+                    float: left;
+                }
+                /* User */
+                .header .branding .applicationBar .dateUser .user {
+                    float: left;
+                    margin-left: 10px;
+                }
+
+                /* Links in dateuser zone*/
+                .header .branding .applicationBar .dateUser a {
+                    border: 0px;
+                    float: left;
+                }
+
+                /* Images in dateuser zone*/
+                .header .branding .applicationBar .dateUser img {
+                    border: 0;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+
+                /* labels in dateuser zone*/
+                .header .branding .applicationBar .dateUser label {
+                    float: left;
+                }
+
+        /* Zone Menu and portlet library */
+        .header .branding .capabilityBar {
+            float: left;
+            width: 100%;
+            background: #015397;
+            height: 40px;
+        }
+            /* Zone with portlet library */
+            .header .branding .capabilityBar .portlet {
+                float: right;
+                margin-top: 13px;
+                margin-right: 10px;
+            }
+
+                .header .branding .capabilityBar .portlet .iconPortlet {
+                    float: left;
+                    background-image: url('../Images/KPMG/portlet_library.png');
+                    background-repeat: no-repeat;
+                    width: 16px;
+                    height: 13px;
+                }
+
+                .header .branding .capabilityBar .portlet .titlePortlet {
+                    margin-left: 5px;
+                    color: white;
+                    float: left;
+                }
+
+
+            /* Menu zone */
+
+            .header .branding .capabilityBar .menu {
+                float: left;
+                width: 600px;
+                height: 40px;
+                margin-left: 185px;
+                -webkit-transform: skew(-16deg);
+                -moz-transform: skew(-16deg);
+                -ms-transform: skew(-16deg);
+                -o-transform: skew(-16deg);
+                transform: skew(-16deg);
+            }
+
+                /* Menu options
+                        - Home
+                        - Taxes
+                        - Travel Tracker
+                        - Inmigration
+                        - Documents
+                        -TaxRay
+                 */
+                .header .branding .capabilityBar .menu .option { /*Blue*/
+                    margin: 0px;
+                    padding: 0px;
+                    float: left;
+                    width: auto;
+                    height: 40px;
+                    color: white;
+                    line-height: 45px;
+                    text-align: center;
+                    vertical-align: top;
+                    background: -webkit-linear-gradient(left top, #064880, #157ABB);
+                    background: -o-linear-gradient(bottom right, #064880, #157ABB);
+                    background: -moz-linear-gradient(bottom right, #064880, #157ABB);
+                    background: linear-gradient(to bottom right, #064880, #157ABB);
+                }
+
+                    .header .branding .capabilityBar .menu .option:hover { /*Green*/
+                        float: left;
+                        width: auto;
+                        height: 40px;
+                        background-image: url('../Images/KPMG/mainNavHover-BG.png');
+                    }
+
+                /* Selected option */
+                .header .branding .capabilityBar .menu .optionSelected {
+                    float: left;
+                    width: auto;
+                    height: 40px;
+                    background-image: url('../Images/KPMG/mainNavHover-BG.png');
+                }
+
+                /* Option home (blue) */
+                .header .branding .capabilityBar .menu .option .home {
+                    width: 55px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .option .home .iconHome {
+                        margin-top: 5px;
+                        margin-left: 18px;
+                        background-image: url('../Images/KPMG/home.png');
+                        background-repeat: no-repeat;
+                        height: 14px;
+                        width: 17px;
+                    }
+
+                    .header .branding .capabilityBar .menu .option .home .titleHome {
+                        height: 22px;
+                        color: white;
+                        margin-top: -15px;
+                        margin-left: -8px;
+                    }
+
+
+
+
+                /* Selected home option (green)*/
+                .header .branding .capabilityBar .menu .optionSelected .home {
+                    width: 55px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .optionSelected .home .iconHome {
+                        margin-top: 5px;
+                        margin-left: 18px;
+                        background-image: url('../Images/KPMG/home.png');
+                        background-repeat: no-repeat;
+                        height: 14px;
+                        width: 17px;
+                    }
+
+                    .header .branding .capabilityBar .menu .optionSelected .home .titleHome {
+                        height: 22px;
+                        color: white;
+                        margin-top: 0px;
+                        margin-left: 10px;
+                    }
+
+                /* Taxes option (blue) */
+                .header .branding .capabilityBar .menu .option .taxes {
+                    width: 65px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .option .taxes .iconTaxes {
+                        margin-top: 5px;
+                        margin-left: 20px;
+                        background-image: url('../Images/KPMG/globeicon.png');
+                        background-repeat: no-repeat;
+                        height: 16px;
+                        width: 16px;
+                    }
+
+                    .header .branding .capabilityBar .menu .option .taxes .titleTaxes {
+                        height: 22px;
+                        color: white;
+                        margin-top: -15px;
+                        margin-left: -8px;
+                    }
+
+
+                /* Selected Taxes Option (green)*/
+                .header .branding .capabilityBar .menu .optionSelected .taxes {
+                    width: 65px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .optionSelected .taxes .iconTaxes {
+                        margin-top: 5px;
+                        margin-left: 20px;
+                        background-image: url('../Images/KPMG/globeicon.png');
+                        background-repeat: no-repeat;
+                        height: 16px;
+                        width: 16px;
+                    }
+
+                    .header .branding .capabilityBar .menu .optionSelected .taxes .titleTaxes {
+                        height: 22px;
+                        color: white;
+                        margin-top: 0px;
+                        margin-left: 16px;
+                    }
+
+                /* Travel Tracker (blue) */
+                .header .branding .capabilityBar .menu .option .travelTracker {
+                    width: 110px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .option .travelTracker .iconTravelTracker {
+                        margin-top: 5px;
+                        margin-left: 45px;
+                        background-image: url('../Images/KPMG/plane.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    .header .branding .capabilityBar .menu .option .travelTracker .titleTravelTracker {
+                        height: 22px;
+                        color: white;
+                        margin-top: -15px;
+                        margin-left: -8px;
+                    }
+
+
+                /*Selected Travel Tracker (green)*/
+                .header .branding .capabilityBar .menu .optionSelected .travelTracker {
+                    width: 110px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .optionSelected .travelTracker .iconTravelTracker {
+                        margin-top: 5px;
+                        margin-left: 45px;
+                        background-image: url('../Images/KPMG/plane.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    .header .branding .capabilityBar .menu .optionSelected .travelTracker .titleTravelTracker {
+                        height: 22px;
+                        color: white;
+                        margin-top: 0px;
+                        margin-left: 15px;
+                    }
+
+                /*Inmigration option*/
+                .header .branding .capabilityBar .menu .option .inmigration {
+                    width: 100px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .option .inmigration .iconInmigration {
+                        margin-top: 5px;
+                        margin-left: 40px;
+                        background-image: url('../Images/KPMG/kgs.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    .header .branding .capabilityBar .menu .option .inmigration .titleInmigration {
+                        height: 22px;
+                        color: white;
+                        margin-top: -15px;
+                        margin-left: -8px;
+                    }
+
+                /*Selected Inmigration option*/
+                .header .branding .capabilityBar .menu .optionSelected .inmigration {
+                    width: 100px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .optionSelected .inmigration .iconInmigration {
+                        margin-top: 5px;
+                        margin-left: 40px;
+                        background-image: url('../Images/KPMG/kgs.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    .header .branding .capabilityBar .menu .optionSelected .inmigration .titleInmigration {
+                        height: 22px;
+                        color: white;
+                        margin-top: 0px;
+                        margin-left: 20px;
+                    }
+
+                /* Documents option (blue) */
+                .header .branding .capabilityBar .menu .option .documents {
+                    width: 95px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .option .documents .iconDocuments {
+                        margin-top: 5px;
+                        margin-left: 35px;
+                        background-image: url('../Images/KPMG/documents.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    .header .branding .capabilityBar .menu .option .documents .titleDocuments {
+                        height: 22px;
+                        color: white;
+                        margin-top: -15px;
+                        margin-left: -8px;
+                    }
+
+               
+                /* Selected Documents option (green)*/
+                .header .branding .capabilityBar .menu .optionSelected .documents {
+                    width: 95px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .optionSelected .documents .iconDocuments {
+                        margin-top: 5px;
+                        margin-left: 35px;
+                        background-image: url('../Images/KPMG/documents.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    .header .branding .capabilityBar .menu .optionSelected .documents .titleDocuments {
+                        height: 22px;
+                        color: white;
+                        margin-top: 0px;
+                        margin-left: 18px;
+                    }
+
+                     /* Tax-Ray option (blue) */
+                .header .branding .capabilityBar .menu .option .TaxRay {
+                    width: 95px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .option .TaxRay .iconTaxRay {
+                        margin-top: 5px;
+                        margin-left: 35px;
+                        background-image: url('../Images/KPMG/documents.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    .header .branding .capabilityBar .menu .option .TaxRay .titleTaxRay {
+                        height: 22px;
+                        color: white;
+                        margin-top: -15px;
+                        margin-left: -8px;
+                    }
+
+                    /* Selected Tax-Ray option (green)*/
+                .header .branding .capabilityBar .menu .optionSelected .TaxRay {
+                    width: 95px;
+                    -webkit-transform: skew(16deg);
+                    -moz-transform: skew(16deg);
+                    -ms-transform: skew(16deg);
+                    -o-transform: skew(16deg);
+                    transform: skew(16deg);
+                }
+
+                    .header .branding .capabilityBar .menu .optionSelected .TaxRay .iconTaxRay {
+                        margin-top: 5px;
+                        margin-left: 35px;
+                        background-image: url('../Images/KPMG/documents.png');
+                        background-repeat: no-repeat;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    .header .branding .capabilityBar .menu .optionSelected .TaxRay .titleTaxRay {
+                        height: 22px;
+                        color: white;
+                        margin-top: 0px;
+                        margin-left: 18px;
+                    }
+                     
+                     .TaxRay a {
+                        color: #fff;
+                        text-decoration:none;
+                     }
+
+                    .TaxRay a:hover{
+                        text-decoration:none;
+                    }
+
+                    .documents  a {
+                        color: #fff;
+                        text-decoration:none;
+                     }
+
+                    .documents a:hover{
+                        text-decoration:none;
+                    }
+                    .inmigration a {
+                        color: #fff;
+                        text-decoration:none;
+                     }
+
+                    .inmigration a:hover{
+                        text-decoration:none;
+                    }
+                    .travelTracker a {
+                        color: #fff;
+                        text-decoration:none;
+                     }
+
+                    .travelTracker a:hover{
+                        text-decoration:none;
+                    }
+                    .taxes a {
+                        color: #fff;
+                        text-decoration:none;
+                     }
+
+                    .taxes a:hover{
+                        text-decoration:none;
+                    }
+                    .home a {
+                        color: #fff;
+                        text-decoration:none;
+                     }
+
+                    .home a:hover{
+                        text-decoration:none;
+                    }
+
+
+    /* Pin bar (Tag/Breadcrumb Zone) */
+    .header .pinBar {
+        background-color: #e9e9e9;
+        height: 32px;
+        width: 100%;
+        border-bottom: solid 1px #494949;
+        border-left: solid 1px #494949;
+        border-right: solid 1px #494949;
+    }
+
+        .header .pinBar .contentPinBar {
+            padding-top: 8px;
+            padding-left: 10px;
+        }
+
+
+/*Dashboard*/
+.dashboard {
+    width: 100%;
+    margin-top: 3px;
+    min-height: 400px;
+    border: solid 1px #bbbbbb;
+    background: -moz-linear-gradient(top, #bbbbbb 0%, #9a9a9a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bbbbbb ), color-stop(100%,#9a9a9a));
+    background: -webkit-linear-gradient(top, #bbbbbb 0%,#9a9a9a 100%);
+    background: -o-linear-gradient(top, #bbbbbb 0%,#9a9a9a 100%);
+    background: -ms-linear-gradient(top, #bbbbbb 0%,#9a9a9a 100%);
+    background: linear-gradient(to bottom, #bbbbbb 0%,#9a9a9a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbbbbb ', endColorstr='#9a9a9a',GradientType=0 );
+}
+
+/*Dashboard Portlet*/
+.dashboardPortlet {
+    min-height: 305px;
+    border-radius: 4px;
+    background: -moz-linear-gradient(top, #9a9a9a 0%, #d0d0d0 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0d0d0), color-stop(100%,#d0d0d0));
+    background: -webkit-linear-gradient(top, #9a9a9a 0%,#d0d0d0 100%);
+    background: -o-linear-gradient(top, #9a9a9a 0%,#d0d0d0 100%);
+    background: -ms-linear-gradient(top, #9a9a9a 0%,#d0d0d0 100%);
+    background: linear-gradient(to bottom, #9a9a9a 0%,#d0d0d0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a9a9a', endColorstr='#d0d0d0',GradientType=0 );
+}
+
+/*Footer*/
+.footer {
+    padding: 10px;
+    width: 100%;
+    min-height: 57px;
+    background-color: #f1f5fb;
+    font-size: 10px;
+    color: #a4a4a4;
+    box-sizing: border-box;
+    vertical-align: top;
+    border: 1px solid #c0c0c0;
+}
+
+/*Links in footer*/
+.footer-link-button {
+    color: #009dd5;
+    font-size: 10px;
+    font-weight: 500;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .footer-link-button:hover {
+        text-decoration: underline;
+    }
+
+/*Buttons*/
+input[type=submit], input[type=button] {
+    color: #ffffff;
+    text-shadow: 1px 1px #446d06;
+    box-shadow: 0 0 0 1px #65a204;
+    width: auto;
+    height: auto;
+    font-weight: 500;
+    text-indent: 0;
+    font-family: Open Sans, Arial, Sans-Serif;
+    font-size: 12px;
+    border: 1px solid white;
+    border-radius: 2px;
+    line-height: 19px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0;
+    padding: 4px 13px;
+    vertical-align: baseline;
+}
+
+    input[type=submit]:disabled, input[type=button]:disabled, input[type=submit]:disabled:hover, input[type=button]:disabled:hover {
+        cursor: default;
+        background: #e9e9e9;
+        box-shadow: 0 0 0 1px #bbbbbb;
+        text-shadow: 0 0 #e9e9e9;
+        outline: 0;
+        color: #bbbbbb;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    }
+
+/*Green buttons*/
+.green-button {
+    background: -moz-linear-gradient(top, #72c407 0%, #65a204 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#72c407), color-stop(100%,#65a204));
+    background: -webkit-linear-gradient(top, #72c407 0%,#65a204 100%);
+    background: -o-linear-gradient(top, #72c407 0%,#65a204 100%);
+    background: -ms-linear-gradient(top, #72c407 0%,#65a204 100%);
+    background: linear-gradient(to bottom, #72c407 0%,#65a204 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72c407', endColorstr='#65a204',GradientType=0 );
+}
+
+    .green-button:active {
+        background: #72c407;
+        text-decoration: none;
+        text-decoration: none;
+    }
+
+    .green-button:hover {
+        background: #65a204;
+        text-decoration: none;
+    }
+
+
+/*Blue buttons*/
+.blue-button {
+    background: -moz-linear-gradient(top, #1688c3 0%, #215fa3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1688c3), color-stop(100%,#215fa3));
+    background: -webkit-linear-gradient(top, #1688c3 0%,#215fa3 100%);
+    background: -o-linear-gradient(top, #1688c3 0%,#215fa3 100%);
+    background: -ms-linear-gradient(top, #1688c3 0%,#215fa3 100%);
+    background: linear-gradient(to bottom, #1688c3 0%,#215fa3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1688c3', endColorstr='#215fa3',GradientType=0 );
+}
+
+    .blue-button:active {
+        background: #1688c3;
+        text-decoration: none;
+    }
+
+    .blue-button:hover {
+        background: #215fa3;
+        text-decoration: none;
+    }
+
+/*Text*/
+.title {
+    color: #494949;
+}
+
+h1 {
+    color: #002664;
+}
+
+h2 {
+    font-size: 14px;
+    color: #68a900;
+    font-weight: 600;
+    margin: 6px 0;
+}
+
+h3 {
+    font-size: 13px;
+    color: #68a900;
+    font-weight: normal;
+    margin: 0;
+}
+
+h4 {
+    color: #818181;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+h5 {
+    font-size: 16px;
+    color: #002664;
+    /*font-weight: 600;*/
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.link-button {
+    color: #009dd5;
+    font-size: 12px;
+    font-weight: 500;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .link-button:hover {
+        text-decoration: underline;
+    }
+
+
+/*Inputs*/
+.input {
+    border: solid 1px #d7d7d7;
+}
+
+    .input:active {
+        background-color: #ffffff;
+    }
+
+    .input:hover {
+        border: solid 1px #41c9ff;
+    }
+
+    .input:focus {
+        border: solid 2px #41c9ff;
+    }
+
+    .input:disabled, .input[readonly='readonly'] {
+        background-color: #f2f2f2;
+        border: solid 1px #d7d7d7;
+    }
+
+
+/*Widget*/
+.widget {
+    border: solid 1px #e9e9e9;
+    border-radius: 4px;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+/*header widget*/
+.headerWidget {
+    border-bottom: solid 1px #e9e9e9;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+}

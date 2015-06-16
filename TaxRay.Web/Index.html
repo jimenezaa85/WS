@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <link href="Styles/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.dataviz.default.min.css" rel="stylesheet" />
+    <link href="Styles/KMPG_Styles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Kendo_KMPG.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/x-kendo-template" id="layout-login">
+
+        <div class="header">
+            <div class="branding">
+                <div class="applicationBar">
+                    <div class="contentApplicationBar">
+                        <div class="titlePortal">
+                            <label>KPMG LINK Global Mobility Portal</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="capabilityBar"></div>
+                <div class="logo">
+                    <img src="Images/KPMG/logo.png" />
+                </div>
+            </div>
+            <div class="pinBar">
+                <div class="contentPinBar">
+                </div>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div class="widget">
+                <section id="content">
+                    <label>Users:</label>
+                    <select id="cmbUsers">
+                        <option value="1" permisos="Super Admin">glang</option><!--Super Admin-->
+                        <option value="2" permisos="Junior">zwillis</option><!--Junior-->
+                        <option value="3" permisos="Senior">mglenn</option><!--Senior-->
+                        <option value="4" permisos="Otros">pblopez</option><!--No tener acceso-->
+                    </select>&nbsp;&nbsp;
+                    <input type="button" value="Login" class="primaryAction button green-button" id="btn-Login" data-bind="click: logarse" />
+                </section>
+            </div>
+        </div>
+        <div class="footer">
+            © 2015 KPMG AG Wirtschaftsprüfungsgesellschaft, a member firm of the KPMG network of independent member firms
+            affiliated with KPMG International Cooperative (“KPMG International”), a Swiss entity. All rights reserved.
+            The name KPMG, the logo and “cutting through complexity” are registered trademarks of KPMG International.
+            <a href="" class="footer-link-button">Legal</a> | <a href="" class="footer-link-button">Privacy</a> | <a href="" class="footer-link-button">Company Information</a>
+        </div>
+
+    </script>
+
+    <script type="text/x-kendo-template" id="layout-template">
+        <div>
+            <div class="header">
+                <div class="branding">
+                    <div class="applicationBar">
+                        <div class="contentApplicationBar">
+                            <div class="titlePortal">
+                                <label>KPMG LINK Global Mobility Portal</label>
+                            </div>
+                            <div class="dateUser">
+                                <div class="date">
+                                    <label>Last Login: 11.05.2015 07:12:05</label>
+                                </div>
+                                <div class="user">
+                                    <a href="">
+                                        <img src="Images/KPMG/app-settings.png" />
+                                    </a>
+                                    <label>scorredera@kpmg.com</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="capabilityBar">
+                        <div class="menu">
+                            <div class="optionSelected" id="bladeHome">
+                                <div class="home">
+                                    <div class="iconHome">
+                                    </div>
+                                    <div class="titleHome">
+                                        <a href="#/Home">Home</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" id="bladeTaxes">
+                                <div class="taxes">
+                                    <div class="iconTaxes">
+                                    </div>
+                                    <div class="titleTaxes">
+                                        <a href="#/Taxes">Taxes</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" id="bladeTravelTracker">
+                                <div class="travelTracker">
+                                    <div class="iconTravelTracker">
+                                    </div>
+                                    <div class="titleTravelTracker">
+                                        <a href="#/TravelTracker">Travel Tracker</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" id="bladeInmigration">
+                                <div class="inmigration">
+                                    <div class="iconInmigration">
+                                    </div>
+                                    <div class="titleInmigration">
+                                        <a href="#/Inmigration">Inmigration</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" id="bladeDocuments">
+                                <div class="documents">
+                                    <div class="iconDocuments">
+                                    </div>
+                                    <div class="titleDocuments">
+                                        <a href="#/Documents">Documents</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" id="bladeTaxRay">
+                                <div class="TaxRay">
+                                    <div class="iconTaxRay">
+                                    </div>
+                                    <div class="titleTaxRay">
+                                        <a href="#/TaxRay">Tax-Ray</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet">
+                            <div class="iconPortlet"></div>
+                            <div class="titlePortlet">Portlet Library</div>
+                        </div>
+
+                    </div>
+                    <div class="logo">
+                        <img src="Images/KPMG/logo.png" />
+                    </div>
+                </div>
+                <div class="pinBar">
+                    <div class="contentPinBar">
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard">
+                <div class="widget">
+                    <section id="content"></section>
+                </div>
+            </div>
+            <div class="footer">
+                © 2015 KPMG AG Wirtschaftsprüfungsgesellschaft, a member firm of the KPMG network of independent member firms
+                affiliated with KPMG International Cooperative (“KPMG International”), a Swiss entity. All rights reserved.
+                The name KPMG, the logo and “cutting through complexity” are registered trademarks of KPMG International.
+                <a href="" class="footer-link-button">Legal</a> | <a href="" class="footer-link-button">Privacy</a> | <a href="" class="footer-link-button">Company Information</a>
+            </div>
+        </div>
+    </script>
+
+
+    <script type="text/x-kendo-template" id="template-otros">
+        <div>No tiene acceso</div>
+    </script>
+
+    <script type="text/x-kendo-template" id="template-taxRay-Junior">
+        <div class="headerWidget">
+            <h5>To Do</h5>
+        </div>
+        <div id="grid"
+             data-role="grid"
+             data-sortable="true"
+             data-row-template="RowTemplateJunior"
+             data-bind="source:taxes"
+             data-columns="[
+                {'field':'atlasId', 'title':'Atlas ID'},
+                {'field':'description', 'title':'Description'},
+                {'field':'client', 'title':'Client'},
+                {'field':'taxPayer', 'title':'TaxPayer' },
+                {'field':'year', 'title':'Year'},
+                {'field':'dueDate', 'title':'Due Date', 'format':'{0:dd.MM.yyyy}'},
+                {'field':'status', 'title':'Status'},
+                {'field':'userNameCreatedBy', 'title': 'CreatedBy'},
+             ]"
+             data-pageable="{
+                input:false,
+                refresh:true,
+                pageSizes:[25,50,100],
+                buttonCount:5,
+                numeric:true
+             }">
+
+        </div>
+    </script>
+    <script id="RowTemplateJunior" type="text/x-kendo-template">
+        <tr>
+            <td data-bind="text: atlasId"></td>
+            <td data-bind="text: description"></td>
+            <td data-bind="text: client"></td>
+            <td data-bind="text: taxPayer"></td>
+            <td data-bind="text: year"></td>
+            <td data-bind="text: dueDate"></td>
+            <td data-bind="text: status"></td>
+            <td data-bind="text: userNameCreatedBy"></td>
+        </tr>
+    </script>
+
+    <script type="text/x-kendo-template" id="template-taxRay-Senior">
+        <div class="headerWidget">
+            <h5>To Do</h5>
+        </div>
+        <div id="grid"
+             data-role="grid"
+             data-sortable="true"
+             data-row-template="RowTemplate-Senior"
+             data-bind="source:taxes"
+             data-columns="[
+                {'field':'atlasId', 'title':'Atlas ID'},
+                {'field':'description', 'title':'Description'},
+                {'field':'client', 'title':'Client'},
+                {'field':'taxPayer', 'title':'TaxPayer' },
+                {'field':'year', 'title':'Year'},
+                {'field':'dueDate', 'title':'Due Date', 'format':'{0:dd.MM.yyyy}'},
+                {'field':'status', 'title':'Status'},
+                {'field':'userNameCreatedBy', 'title': 'CreatedBy'},
+                {'title':'', 'width':'130px'}
+             ]"
+             data-pageable="{
+                input:false,
+                refresh:true,
+                pageSizes:[25,50,100],
+                buttonCount:5,
+                numeric:true
+             }">
+
+        </div>
+        <div id="assingSenior"></div>
+    </script>
+
+    <script id="RowTemplate-Senior" type="text/x-kendo-template">
+        <tr>
+            <td data-bind="text: atlasId"></td>
+            <td data-bind="text: description"></td>
+            <td data-bind="text: client"></td>
+            <td data-bind="text: taxPayer"></td>
+            <td data-bind="text: year"></td>
+            <td data-bind="text: dueDate"></td>
+            <td data-bind="text: status"></td>
+            <td data-bind="text: userNameCreatedBy"></td>
+            <td>
+                <a data-bind="click:AssignTaxSenior" class="k-button k-button-icontext k-grid-edit" href="\#"><span></span>Assing To</a>
+            </td>
+        </tr>
+    </script>
+
+
+    <script type="text/x-kendo-template" id="template-taxRay">
+        <div class="headerWidget">
+            <h5>To Do</h5>
+        </div>
+        <div id="grid"
+             data-role="grid"
+             data-sortable="true"
+             data-row-template="TaxRayGridRowTemplate"
+             data-bind="source:taxes, events: { dataBound: onDataBound }"
+             data-columns="[
+                {'field':'atlasId', 'title':'Atlas ID'},
+                {'field':'description', 'title':'Description'},
+                {'field':'client', 'title':'Client'},
+                {'field':'taxPayer', 'title':'TaxPayer' },
+                {'field':'year', 'title':'Year'},
+                {'field':'dueDate', 'title':'Due Date', 'format':'{0:dd.MM.yyyy}'},
+                {'field':'status', 'title':'Status'},
+                {'field':'userNameAssignedTo', 'title':'AssignedTo'},
+                {'field':'userNameCreatedBy', 'title': 'CreatedBy'},
+                {'title':'', 'width':'230px'}
+             ]"
+             data-pageable="{
+                input:false,
+                refresh:true,
+                pageSizes:[25,50,100],
+                buttonCount:5,
+                numeric:true
+             }">
+
+        </div>
+        <div id="edit"></div>
+        <div id="assing"></div>
+    </script>
+
+    <script id="TaxRayGridRowTemplate" type="text/x-kendo-template">
+        <tr>
+            <td data-bind="text: atlasId"></td>
+            <td data-bind="text: description"></td>
+            <td data-bind="text: client"></td>
+            <td data-bind="text: taxPayer"></td>
+            <td data-bind="text: year"></td>
+            <td data-bind="text: dueDate"></td>
+            <td data-bind="text: status"></td>
+
+            <td data-bind="text: userNameAssignedTo"></td>
+            <td data-bind="text: userNameCreatedBy"></td>
+            <td>
+                <a data-bind="click:AssignTax" class="k-button k-button-icontext k-grid-edit" href="\#"><span></span>Assing To</a>
+                <a data-bind="click:EditTax" class="k-button k-button-icontext k-grid-edit" href="\#"><span class="k-icon k-edit"></span>Edit</a>
+                <a data-bind="click:deleteTax" class="k-button k-button-icontext k-grid-delete" style="visibility:visible" href="\#"><span class="k-icon k-delete"></span>Delete</a>
+            </td>
+        </tr>
+    </script>
+
+    <script type="text/x-kendo-template" id="template-home">
+        home
+
+    </script>
+
+    <script type="text/x-kendo-template" id="template-taxes">
+        Taxes
+    </script>
+
+    <script type="text/x-kendo-template" id="template-travelTracker">
+        Travel Tracker
+    </script>
+
+    <script type="text/x-kendo-template" id="template-inmigration">
+        Inmigration
+    </script>
+
+    <script type="text/x-kendo-template" id="template-documents">
+        Documents
+    </script>
+
+    <script type="text/x-kendo-template" id="template-assing">
+        <div class="k-edit-form-container">
+            <div class="k-edit-label">
+                <label for="description">Description:</label>
+            </div>
+            <div class="k-edit-field" data-container-for="description">
+                <input type="text" class="k-input k-textbox" data-bind="value: description" readonly />
+            </div>
+
+            <div class="k-edit-label">
+                <label for="users">Users:</label>
+            </div>
+            <div class="k-edit-field" data-container-for="description">
+                <select id="comboUsers" data-role="combobox" data-filter="contains" data-value-field="id" data-text-field="username" data-bind="value:assignedToId, source:users, events:{change:onChange, open: onOpen} " />
+            </div>
+
+            <div class="k-edit-label">
+                <label></label>
+            </div>
+            <div class="k-edit-field" data-container-for="description">
+                <label for="error" data-bind="text: error" style="color: red; font-size:12px; font-weight:bold"></label>
+            </div>
+
+            <div class="k-edit-buttons k-state-default">
+                <a id="btn-update" data-bind="click: update,visible: isVisible" class="k-button k-button-icontext k-primary k-grid-edit" href="\#"><span class="k-icon k-edit"></span>Update</a>
+                <a id="btn-cancel" data-bind="click: cancel" class="k-button k-button-icontext k-grid-cancel " href="\#"><span class="k-icon k-cancel"></span>Cancel</a>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-kendo-template" id="template-edit">
+        <div class="k-edit-form-container" id="formEdit">
+
+            <div class="k-edit-label">
+                <label for="description">Description:</label>
+            </div>
+            <div class="k-edit-field">
+                <input name="description" id="description" type="text" class="k-input k-textbox" data-bind="value: description, events:{change: onchange}" required validationmessage="Description is required" />
+            </div>
+
+            <div class="k-edit-label">
+                <label for="client">Client:</label>
+            </div>
+            <div class="k-edit-field">
+                <input name="client" id="client" type="text" class="k-input k-textbox" data-bind="value: client, events:{change: onchange}" required validationmessage="Client is required" />
+            </div>
+
+            <div class="k-edit-label">
+                <label for="taxPayer">TaxPayer</label>
+            </div>
+            <div class="k-edit-field">
+                <input name="taxPayer" id="taxPayer" type="text" class="k-input k-textbox" data-bind="value: taxPayer, events:{change: onchange}" required validationmessage="Tax Payer is required" />
+            </div>
+
+            <div class="k-edit-label">
+                <label for="year">Year</label>
+            </div>
+            <div class="k-edit-field">
+                <input name="year" data-format="\\#" data-role="numerictextbox" data-bind="value: year, events:{change: onchange}" maxlength="4" min="1700" required validationmessage="Year is required" />
+            </div>
+
+            <div class="k-edit-label">
+                <label for="dueDate">Due Date:</label>
+            </div>
+            <div class="k-edit-field">
+                <input name="dueDate" id="dueDate" data-role="datepicker" date-parse-format="dd.MM.yyyy" data-format="{0:dd.MM.yyyy}" data-bind="value: dueDate, events:{change: onchangeDate}" />
+            </div>
+            <div class="k-edit-label">
+                <label for="status">Status:</label>
+            </div>
+            <div class="k-edit-field">
+                <input name="status" id="status" type="text" class="k-input k-textbox" data-bind="value: status, events:{change: onchange}" required validationmessage="Status is required" />
+            </div>
+
+            <div class="k-edit-buttons k-state-default">
+                <a id="btn-update" data-bind="click: update,visible: isVisible" class="k-button k-button-icontext k-primary k-grid-edit" href="\#"><span class="k-icon k-edit"></span>Update</a>
+                <a id="btn-cancel" data-bind="click: cancel" class="k-button k-button-icontext k-grid-cancel " href="\#"><span class="k-icon k-cancel"></span>Cancel</a>
+            </div>
+        </div>
+    </script>
+
+
+    <script data-main="Scripts/main" src="Scripts/lib/require.js"></script>
+</body>
+</html>

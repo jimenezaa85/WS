@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="Styles/KMPG_Styles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Kendo_KMPG.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/lib/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/lib/kendo/kendo.all.min.js"></script>
+</head>
+<body>
+    <a href="#/home">Home</a>
+    <a href="#/taxes">Taxes</a>
+    <a href="#/otros">Otros</a>
+    <input type="button" id="pureba" />
+
+    <div id="app"></div>
+
+    <script id="home" type="text/x-kendo-template">
+        Home
+    </script>
+
+    <script id="taxes" type="text/x-kendo-template">
+        Taxes
+    </script>
+
+    <script id="otra" type="text/x-kendo-template">
+        Otra
+    </script>
+
+    <script>
+        var home = new kendo.View("home");
+        var taxes = new kendo.View("taxes");
+        var otraVista = new kendo.View("otra");
+
+        home.render("#app");
+
+
+        var router = new kendo.Router({
+            init: function(){
+                home.render("#app");
+            }
+        });
+
+        router.route("/", function(){
+        
+        });
+
+
+        router.route("/taxes", function () {
+            home.hide();
+            taxes.render("#app");
+        })
+
+
+
+        $(function () {
+            router.start();
+            //router.navigate("/#home");
+
+        })
+    </script>
+
+    <!--
+        1- Creas enrutamiento
+        2- Creas un layout o contenedor principal como si fueste una master page. Aqui cargaremos todas las vistas
+        3- Creas la vista
+        4- Defines el enrutamiento
+
+
+
+    -->
+
+
+
+
+
+</body>
+</html>

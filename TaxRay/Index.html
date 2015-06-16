@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <link href="Styles/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.dataviz.default.min.css" rel="stylesheet" />
+    <link href="Styles/KMPG_Styles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Kendo_KMPG.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+    <div>
+        <div class="header">
+            <div class="branding">
+                <div class="applicationBar">
+                    <div class="contentApplicationBar">
+                        <div class="titlePortal">
+                            <label>KPMG LINK Global Mobility Portal</label>
+                        </div>
+                        <div class="dateUser">
+                            <div class="date">
+                                <label>Last Login: 28.05.2015 18:27:42</label>
+                            </div>
+                            <div class="user">
+                                <a href="">
+                                    <img src="Images/KPMG/app-settings.png" />
+                                </a>
+                                <label>scorredera@kpmg.com</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="capabilityBar">
+                    <div class="menu">
+                        <div class="optionSelected">
+                            <div class="home">
+                                <div class="iconHome">
+                                </div>
+                                <div class="titleHome">
+                                    Home
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="taxes">
+                                <div class="iconTaxes">
+                                </div>
+                                <div class="titleTaxes">
+                                    Taxes
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="travelTracker">
+                                <div class="iconTravelTracker">
+                                </div>
+                                <div class="titleTravelTracker">
+                                    Travel Tracker
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="inmigration">
+                                <div class="iconInmigration">
+                                </div>
+                                <div class="titleInmigration">
+                                    Inmigration
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="documents">
+                                <div class="iconDocuments">
+                                </div>
+                                <div class="titleDocuments">
+                                    Documents
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <div class="TaxRay">
+                                <div class="iconTaxRay">
+                                </div>
+                                <div class="titleTaxRay">
+                                    <a href="#">Tax-Ray</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet">
+                        <div class="iconPortlet"></div>
+                        <div class="titlePortlet">Portlet Library</div>
+                    </div>
+
+                </div>
+                <div class="logo">
+                    <img src="Images/KPMG/logo.png" />
+                </div>
+            </div>
+            <div class="pinBar">
+                <div class="contentPinBar">
+                </div>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div class="widget">
+                <div class="headerWidget">
+                    <h5>To Do</h5>
+                </div>
+                <div id="gridTax"></div>
+                <div id="details"></div>
+            </div>
+        </div>
+
+        <form id="userData">
+            <input type="text" name="userName" placeholder="Name" />
+            <input type="password" name="password" placeholder="Password" />
+            <input type="submit" id="login" value="Login" />
+        </form>
+
+        <pre id="output">
+    </pre>
+
+        <div class="footer">
+            © 2015 KPMG AG Wirtschaftsprüfungsgesellschaft, a member firm of the KPMG network of independent member firms
+            affiliated with KPMG International Cooperative (“KPMG International”), a Swiss entity. All rights reserved.
+            The name KPMG, the logo and “cutting through complexity” are registered trademarks of KPMG International.
+            <a href="" class="footer-link-button">Legal</a> | <a href="" class="footer-link-button">Privacy</a> | <a href="" class="footer-link-button">Company Information</a>
+        </div>
+    </div>
+
+    <script data-main="Scripts/main" src="Scripts/lib/require.js"></script>
+
+    <script type="text/x-kendo-template" id="template">
+        <div class="k-edit-form-container">
+            <div class="k-edit-label" style="display:none">
+                Id:
+            </div>
+            <div class="k-edit-field" style="display:none">
+                <input type="text" class="k-input k-textbox" id="taxId" value="#= id #" />
+            </div>
+
+            <div class="k-edit-label" style="display:none">
+                userNameAssignedTo:
+            </div>
+            <div class="k-edit-field" style="display:none">
+                <input type="text" class="k-input k-textbox" id="txtAssignedTo" value="#= userNameAssignedTo #" />
+            </div>
+
+            <div class="k-edit-label" style="display:none">
+                UserName:
+            </div>
+            <div class="k-edit-field" style="display:none">
+                <input type="text" disabled class="k-input k-textbox" id="txtUserCreatedById" value="#= createdById #" />
+            </div>
+
+            <div class="k-edit-label">
+                Description:
+            </div>
+            <div class="k-edit-field">
+                <input type="text" disabled class="k-input k-textbox" value="#= description #" />
+            </div>
+
+            <div class="k-edit-label">
+                Usuarios:
+            </div>
+            <div class="k-edit-field">
+                <select id="cmbUserAssignedTo"></select>
+            </div>
+
+            <div class="k-edit-buttons k-state-default">
+                <input class="k-button  k-button-icontext k-state-default" type="button" id="btn-update" value="Update" />
+                <input type="button" value="Cancel" id="btn-cancel" />
+            </div>
+        </div>
+
+    </script>
+
+</body>
+</html>
